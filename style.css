@@ -1,0 +1,208 @@
+/* Variáveis de Cor para facilitar a manutenção */
+:root {
+    --yt-background: #0F0F0F;
+    --yt-surface: #212121;
+    --yt-text-primary: #FFFFFF;
+    --yt-text-secondary: #AAAAAA;
+    --yt-border-color: #3d3d3d;
+}
+
+/* Estilos Gerais */
+* {
+    box-sizing: border-box;
+    /* Garante que padding e border não alterem a largura final */
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--yt-background);
+    color: var(--yt-text-primary);
+}
+
+/* 1. ESTILOS DO HEADER */
+.header {
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    border-bottom: 1px solid var(--yt-border-color);
+    position: fixed;
+    /* Fixa o header no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--yt-background);
+    z-index: 100;
+    /* Garante que o header fique sobre outros elementos */
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.left-section .material-icons {
+    cursor: pointer;
+    padding: 8px;
+}
+
+.youtube-logo {
+    height: 20px;
+    margin-left: 24px;
+}
+
+.middle-section {
+    flex: 1;
+    max-width: 600px;
+    margin: 0 40px;
+    display: flex;
+}
+
+.search-bar {
+    flex: 1;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 16px;
+    background-color: #121212;
+    border: 1px solid var(--yt-border-color);
+    border-radius: 40px 0 0 40px;
+    color: var(--yt-text-primary);
+}
+
+.search-button {
+    width: 64px;
+    height: 40px;
+    background-color: var(--yt-surface);
+    border: 1px solid var(--yt-border-color);
+    border-left: none;
+    border-radius: 0 40px 40px 0;
+    cursor: pointer;
+}
+
+.search-button .material-icons {
+    color: var(--yt-text-primary);
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.right-section .material-icons {
+    margin-left: 24px;
+    cursor: pointer;
+}
+
+
+/* 2. ESTILOS DO CONTAINER PRINCIPAL E SIDEBAR */
+.main-container {
+    display: flex;
+    margin-top: 56px;
+    /* Espaçamento para o header fixo */
+}
+
+.sidebar {
+    width: 240px;
+    background-color: var(--yt-background);
+    padding-top: 12px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    height: 40px;
+    text-decoration: none;
+    color: var(--yt-text-primary);
+    font-size: 14px;
+}
+
+.sidebar-link:hover {
+    background-color: var(--yt-surface);
+}
+
+.sidebar-link.active {
+    background-color: var(--yt-surface);
+    font-weight: 500;
+}
+
+.sidebar-link .material-icons {
+    margin-right: 24px;
+}
+
+.sidebar hr {
+    border: none;
+    border-top: 1px solid var(--yt-border-color);
+    margin: 12px 0;
+}
+
+
+/* 3. ESTILOS DA GRELHA DE VÍDEOS */
+.video-grid {
+    flex: 1;
+    padding: 24px;
+    display: grid;
+    /* ALTERAÇÃO: Agora as colunas têm largura fixa de 300px */
+    grid-template-columns: repeat(auto-fill, 300px);
+    gap: 20px 16px;
+    /* Espaçamento vertical e horizontal entre os vídeos */
+    /* ALTERAÇÃO: Centraliza os cartões se houver espaço sobrando na linha */
+    justify-content: center;
+}
+
+.video-card {
+    cursor: pointer;
+}
+
+.thumbnail {
+    width: 100%;
+    border-radius: 12px;
+    height: 200px;
+}
+
+.thumbnail-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--yt-surface);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--yt-text-secondary);
+    font-size: 14px;
+}
+
+.video-info-container {
+    display: flex;
+    margin-top: 12px;
+}
+
+.channel-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+
+.video-text-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.video-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 4px 0;
+    line-height: 22px;
+    max-height: 44px;
+    overflow: hidden;
+}
+
+.channel-name,
+.video-stats {
+    font-size: 14px;
+    color: var(--yt-text-secondary);
+    margin: 0;
+}
